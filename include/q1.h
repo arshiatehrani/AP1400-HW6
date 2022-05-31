@@ -4,6 +4,7 @@
 #include <cmath>
 #include <functional>
 #include <iostream>
+
 namespace q1 {
 
 template <typename T, typename Func>
