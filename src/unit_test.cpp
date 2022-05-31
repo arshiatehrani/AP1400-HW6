@@ -40,8 +40,8 @@ TEST(HW6Test, TEST4)
     auto min = q1::gradient_descent<double, Func>(0.0, 0.01);
     EXPECT_NEAR(min, -1.57, 0.01);
 }
-/*
 
+/*
 TEST(HW6Test, TEST5) {
     std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
     EXPECT_EQ(patients.size(), 59);
