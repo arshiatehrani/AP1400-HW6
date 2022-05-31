@@ -5,28 +5,53 @@
 #include <functional>
 #include <iostream>
 namespace q1 {
-inline double gradient_descent(double initial_value, double step_size, double (*func)(double a))
+
+template <typename T, typename Func>
+inline double gradient_descent(T initial_value, T step_size, Func func)
 {
-    double value {};
-    value = func(initial_value);
-    double i { initial_value + step_size };
+    T value { func(initial_value) };
+    T i { initial_value + step_size };
 
     while (true) {
 
-        if (func(i) < value)
+        if (func(i) < value) {
             value = func(i);
+            if (value == func(i)) {
+                if (value < func(i - step_size) && value < func(i + step_size))
+                    break;
 
-        if (value == func(i)) {
-            if (value < func(i - step_size) && value < func(i + step_size))
-                break;
-
-            // If func(initial_value) is minimum:
-        } else if (value < func(i - 2 * step_size))
-            return initial_value;
-
-        i += step_size;
+                i += step_size;
+            }
+        }
+        if (func(i) > value)
+            i -= 2 * step_size;
     }
-    std::cout << value << ", " << i << std::endl;
+
+    return i;
+}
+
+template <typename T, typename Func>
+inline double gradient_descent(T initial_value, T step_size)
+{
+    Func func;
+    T value { func(initial_value) };
+    T i { initial_value + step_size };
+
+    while (true) {
+
+        if (func(i) < value) {
+            value = func(i);
+            if (value == func(i)) {
+                if (value < func(i - step_size) && value < func(i + step_size))
+                    break;
+
+                i += step_size;
+            }
+        }
+        if (func(i) > value)
+            i -= 2 * step_size;
+    }
+
     return i;
 }
 

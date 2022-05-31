@@ -16,30 +16,31 @@ TEST(HW6Test, TEST1)
     auto min2 = q1::gradient_descent(0.01, 0.01, cos);
     EXPECT_NEAR(min2, 3.14, 0.01);
 }
-/*
 
-TEST(HW6Test, TEST2) {
-    auto min = q1::gradient_descent(0.01, 0.01, [](double a){return sin(a)+cos(a);});
+TEST(HW6Test, TEST2)
+{
+    auto min = q1::gradient_descent(0.01, 0.01, [](double a) { return sin(a) + cos(a); });
     EXPECT_NEAR(min, -2.36, 0.01);
 }
 
-TEST(HW6Test, TEST3) {
-    struct Func
-    {
-        double operator()(double a) {return cos(a);}
+TEST(HW6Test, TEST3)
+{
+    struct Func {
+        double operator()(double a) { return cos(a); }
     };
-    auto min = q1::gradient_descent(0.01, 0.01, Func{});
+    auto min = q1::gradient_descent(0.01, 0.01, Func {});
     EXPECT_NEAR(min, 3.14, 0.01);
 }
 
-TEST(HW6Test, TEST4) {
-    struct Func
-    {
-        double operator()(double a) {return sin(a);}
+TEST(HW6Test, TEST4)
+{
+    struct Func {
+        double operator()(double a) { return sin(a); }
     };
     auto min = q1::gradient_descent<double, Func>(0.0, 0.01);
     EXPECT_NEAR(min, -1.57, 0.01);
 }
+/*
 
 TEST(HW6Test, TEST5) {
     std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
