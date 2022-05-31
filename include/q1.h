@@ -16,13 +16,13 @@ inline double gradient_descent(T initial_value, T step_size, Func func)
     while (true) {
 
         if (func(i) < value) {
-            value = func(i);
-            if (value == func(i)) {
-                if (value < func(i - step_size) && value < func(i + step_size))
-                    break;
 
-                i += step_size;
-            }
+            value = func(i);
+
+            if (value < func(i - step_size) && value < func(i + step_size))
+                break;
+
+            i += step_size;
         }
         if (func(i) > value)
             i -= 2 * step_size;
@@ -41,13 +41,13 @@ inline double gradient_descent(T initial_value, T step_size)
     while (true) {
 
         if (func(i) < value) {
-            value = func(i);
-            if (value == func(i)) {
-                if (value < func(i - step_size) && value < func(i + step_size))
-                    break;
 
-                i += step_size;
-            }
+            value = func(i);
+
+            if (value < func(i - step_size) && value < func(i + step_size))
+                break;
+
+            i += step_size;
         }
         if (func(i) > value)
             i -= 2 * step_size;
