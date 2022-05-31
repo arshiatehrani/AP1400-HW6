@@ -41,33 +41,33 @@
 //     EXPECT_NEAR(min, -1.57, 0.01);
 // }
 
-TEST(HW6Test, TEST5)
-{
-    std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
-    EXPECT_EQ(patients.size(), 59);
-    EXPECT_EQ(patients[0].name, "John Wick");
-    EXPECT_EQ(patients[0].age, 35);
-    EXPECT_EQ(patients[0].smokes, 3);
-    EXPECT_EQ(patients[0].area_q, 5);
-    EXPECT_EQ(patients[0].alkhol, 4);
+// TEST(HW6Test, TEST5)
+// {
+//     std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
+//     EXPECT_EQ(patients.size(), 59);
+//     EXPECT_EQ(patients[0].name, "John Wick");
+//     EXPECT_EQ(patients[0].age, 35);
+//     EXPECT_EQ(patients[0].smokes, 3);
+//     EXPECT_EQ(patients[0].area_q, 5);
+//     EXPECT_EQ(patients[0].alkhol, 4);
 
-    EXPECT_EQ(patients[58].name, "Sidney Poitier");
-    EXPECT_EQ(patients[58].age, 51);
-    EXPECT_EQ(patients[58].smokes, 25);
-    EXPECT_EQ(patients[58].area_q, 9);
-    EXPECT_EQ(patients[58].alkhol, 0);
-}
+//     EXPECT_EQ(patients[58].name, "Sidney Poitier");
+//     EXPECT_EQ(patients[58].age, 51);
+//     EXPECT_EQ(patients[58].smokes, 25);
+//     EXPECT_EQ(patients[58].area_q, 9);
+//     EXPECT_EQ(patients[58].alkhol, 0);
+// }
 
-TEST(HW6Test, TEST6)
-{
-    std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
+// TEST(HW6Test, TEST6)
+// {
+//     std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
 
-    q2::sort(patients);
-    EXPECT_EQ(patients[0].name, "Alec Guinness");
-    EXPECT_EQ(patients[10].name, "Sidney Poitier");
-    EXPECT_EQ(patients[30].name, "Jane Wyman");
-    EXPECT_EQ(patients[58].name, "Joan Crawford");
-}
+//     q2::sort(patients);
+//     EXPECT_EQ(patients[0].name, "Alec Guinness");
+//     EXPECT_EQ(patients[10].name, "Sidney Poitier");
+//     EXPECT_EQ(patients[30].name, "Jane Wyman");
+//     EXPECT_EQ(patients[58].name, "Joan Crawford");
+// }
 
 /*
 TEST(HW6Test, TEST7) {
