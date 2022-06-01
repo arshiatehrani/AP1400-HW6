@@ -82,24 +82,26 @@
 //     EXPECT_EQ(flight_numbers, correct);
 // }
 
-/*
-TEST(HW6Test, TEST8) {
-    std::vector<q4::Sensor> sensors{{{0, 0.01}, 0.5},
-                                {{0.5, 0.009}, 0.2}};
-    auto kalman{q4::kalman_filter(sensors)};
+TEST(HW6Test, TEST8)
+{
+    std::vector<q4::Sensor> sensors { { { 0, 0.01 }, 0.5 },
+        { { 0.5, 0.009 }, 0.2 } };
+    auto kalman { q4::kalman_filter(sensors) };
     EXPECT_NEAR(kalman.x, 0.142, 0.01);
     EXPECT_NEAR(kalman.y, 0.0097, 0.01);
 }
 
-TEST(HW6Test, TEST9) {
-    std::vector<q4::Sensor> sensors{{{1, 0.3}, 0.5},
-                                {{0.92, 0.5}, 0.2},
-                                {{0.84, 0.65}, 0.4},
-                                {{1.23, 0.46}, 0.8},
-                                {{2.01, 0.101}, 0.1}};
-    auto kalman{q4::kalman_filter(sensors)};
+TEST(HW6Test, TEST9)
+{
+    std::vector<q4::Sensor> sensors { { { 1, 0.3 }, 0.5 },
+        { { 0.92, 0.5 }, 0.2 },
+        { { 0.84, 0.65 }, 0.4 },
+        { { 1.23, 0.46 }, 0.8 },
+        { { 2.01, 0.101 }, 0.1 } };
+    auto kalman { q4::kalman_filter(sensors) };
     EXPECT_NEAR(kalman.x, 1.102, 0.01);
     EXPECT_NEAR(kalman.y, 0.4440, 0.01);
     // std::cout << kalman.x << ", " << kalman.y << std::endl;
 }
-*/
+/*
+ */
