@@ -48,10 +48,10 @@ inline std::vector<Patient> read_file(std::string filename)
         std::istringstream iss_areaq { match[7].str() };
         std::istringstream iss_alkhol { match[8].str() };
 
-        size_t age;
-        size_t smokes;
-        size_t areaq;
-        size_t alkhol;
+        size_t age {};
+        size_t smokes {};
+        size_t areaq {};
+        size_t alkhol {};
 
         iss_age >> age;
         iss_smokes >> smokes;
